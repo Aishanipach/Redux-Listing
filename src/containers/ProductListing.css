@@ -1,0 +1,25 @@
+.footer{
+    margin-top:2rem;
+    background-color: blue;
+    color:aliceblue;
+    border-radius: 1rem;
+    width:55vh;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.footer button{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    font-size: 1rem;
+    color:aliceblue;
+}
+
+.footer button:hover{
+    font-size: 1.4rem;
+    cursor: pointer;
+}

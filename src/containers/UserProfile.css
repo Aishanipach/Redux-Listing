@@ -1,0 +1,32 @@
+.userCard{
+    /* margin-left: 7%; */
+    width: 80%;
+    background-color: rgb(224, 252, 192);
+margin-top: 10rem;
+border-radius: 1rem;
+padding:5rem;
+display: flex;
+flex-direction:row ;
+justify-content: space-around;
+align-items: center;
+
+}
+
+.userCard .image img{
+
+    width: 25vh;
+    height: 25vh;
+
+}
+
+.content .userName{
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.content .userEmail{
+    margin-top:2rem;
+    font-size: 1.2rem;
+
+}

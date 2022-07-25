@@ -1,0 +1,22 @@
+.ui.grid{
+margin-top: 10rem;
+
+
+justify-content: center;}
+
+.users__btn button{
+    height:3rem;
+    width:9rem;
+    border-radius: 2rem;
+}
+
+button:hover{
+    background-color: blue;
+    color:white
+}
+
+button:focus{
+    background-color: blue;
+    color:white
+}
+
