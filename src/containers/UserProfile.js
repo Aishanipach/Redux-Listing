@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Spinner from 'react-bootstrap/Spinner';
 import {
   selectedProduct,
- 
+
 } from "../redux/actions/productsActions";
 
 //   useEffect(() => {
@@ -15,44 +15,45 @@ import {
 //     };
 //   }, [productId]);
 function UserProfile(props) {
-  const [loading, setLoading]=useState(false)
+  const [loading, setLoading] = useState(true)
   let user = useSelector((state) => state.user);
   const { id, email, first_name, last_name, avatar } = user;
   const dispatch = useDispatch();
   const fetchProductDetail = async () => {
     const response = await axios
       .get(`https://reqres.in/api/users/${props.userID}`)
-      
+
       .catch((err) => {
         console.log("Err: ", err);
       });
     dispatch(selectedProduct(response.data.data));
+    setLoading(false)
   };
 
   useEffect(() => {
-    if(props.userID!=0){
-       fetchProductDetail(props.userID);
+    if (props.userID != 0) {
+      fetchProductDetail(props.userID);
     }
-        
-      }, [props.userID]);
 
-      
+  }, [props.userID]);
+
+
   return (
-  
+
     <div className="userCard">
-    {user?
-      <>        
-        <div className="content">
-                <div className="userName">{props.userID==0?"Click on a user!":`${user.first_name} ${user.last_name}`}</div>
-                <div className="userEmail">{props.userID==0?"& get more information":`${user.email}`}</div>
-                
-             </div>
-             <div className="image">
-                <img src={user.avatar} alt={id} />
-              </div>
-              </>: <Spinner animation="border" variant="primary" />}
-             </div>
-            
+      {loading ? <div style={{ backgroundColor: "white", height: "100%" }}><Spinner animation="border" size="lg" variant="primary" /> </div> :
+        <>
+          <div className="content">
+            <div className="userName">{props.userID == 0 ? "Click on a user!" : `${user.first_name} ${user.last_name}`}</div>
+            <div className="userEmail">{props.userID == 0 ? "& get more information" : `${user.email}`}</div>
+
+          </div>
+          <div className="image">
+            <img src={user.avatar} alt={id} />
+          </div>
+        </>}
+    </div>
+
   )
 }
 
