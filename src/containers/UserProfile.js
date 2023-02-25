@@ -3,6 +3,8 @@ import axios from "axios";
 import "./UserProfile.css"
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from 'react-bootstrap/Spinner';
+import Button from 'react-bootstrap/Button'
+// import spinner from './spinner.gif';
 import {
   selectedProduct,
 
@@ -26,12 +28,13 @@ function UserProfile(props) {
       .catch((err) => {
         console.log("Err: ", err);
       });
+
     dispatch(selectedProduct(response.data.data));
     setLoading(false)
   };
 
   useEffect(() => {
-    if (props.userID != 0) {
+    if (props.userID !== 0) {
       fetchProductDetail(props.userID);
     }
 
@@ -41,17 +44,23 @@ function UserProfile(props) {
   return (
 
     <div className="userCard">
-      {loading ? <div style={{ backgroundColor: "white", height: "100%" }}><Spinner animation="border" size="lg" variant="primary" /> </div> :
-        <>
-          <div className="content">
-            <div className="userName">{props.userID == 0 ? "Click on a user!" : `${user.first_name} ${user.last_name}`}</div>
-            <div className="userEmail">{props.userID == 0 ? "& get more information" : `${user.email}`}</div>
+      {props.userID === 0 ? <h2>Click on a user! </h2> :
+        (loading ?
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+          :
+          <>
+            <div className="content">
+              <div className="userName">{`${user.first_name} ${user.last_name}`}</div>
+              <div className="userEmail">{`${user.email}`}</div>
 
-          </div>
-          <div className="image">
-            <img src={user.avatar} alt={id} />
-          </div>
-        </>}
+            </div>
+            <div className="image">
+              <img src={user.avatar} alt={id} />
+            </div>
+          </>
+        )}
     </div>
 
   )
