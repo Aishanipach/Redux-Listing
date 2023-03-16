@@ -12,7 +12,8 @@
 
 (I tried with couple of other APIs before, hence the 'product' naming.)
 
-
+### Optimization analysis:
+-tbd-
 
 ### Using redux-devtools extension✨:
 ``` javascript
