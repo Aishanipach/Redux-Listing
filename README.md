@@ -4,9 +4,9 @@
 <a href="#"><img alt="React" src="https://img.shields.io/badge/React%20-%2320232a.svg?logo=react&logoColor=%2361DAFB"></a>
 <a href="#"><img alt="React" src="https://img.shields.io/badge/Redux%20-black.svg?logo=redux&logoColor=purple"></a>
 
-- Using **axios for getting user information from [https://reqres.in/](https://reqres.in/).**
+- Using **axios for getting user information from [https://reqres.in/](https://reqres.in/). **
 - **Semantics-UI** for dynamic styling component 
-- Loading component from **react-bootstrap**
+- Loading component from **react-bootstrap** 
 
 ## [Visit project 🌐](https://the-awesome-aishanipach-site.netlify.app/)
 
