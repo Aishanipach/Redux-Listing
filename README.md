@@ -25,4 +25,3 @@ const store = createStore(
 );
 ```
 ***redux/store.js***
-
